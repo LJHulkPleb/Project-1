@@ -26,6 +26,7 @@ class Ui_MainWindow(object):
         self.Titletext.setObjectName("Titletext")
         self.powerButton = QtWidgets.QRadioButton(self.centralwidget)
         self.powerButton.setGeometry(QtCore.QRect(150, 350, 131, 41))
+        self.powerButton.setChecked(True)
         font = QtGui.QFont()
         font.setPointSize(12)
         self.powerButton.setFont(font)
@@ -99,7 +100,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Recursion Calculator"))
         self.Titletext.setText(_translate("MainWindow", "Recursion"))
         self.powerButton.setText(_translate("MainWindow", "Power"))
         self.catButton.setText(_translate("MainWindow", "Cat Ears"))

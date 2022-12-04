@@ -15,6 +15,8 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
+        MainWindow.setMinimumSize(QtCore.QSize(800, 600))
+        MainWindow.setMaximumSize(QtCore.QSize(800, 600))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.Titletext = QtWidgets.QLabel(self.centralwidget)
@@ -26,10 +28,10 @@ class Ui_MainWindow(object):
         self.Titletext.setObjectName("Titletext")
         self.powerButton = QtWidgets.QRadioButton(self.centralwidget)
         self.powerButton.setGeometry(QtCore.QRect(150, 350, 131, 41))
-        self.powerButton.setChecked(True)
         font = QtGui.QFont()
         font.setPointSize(12)
         self.powerButton.setFont(font)
+        self.powerButton.setChecked(True)
         self.powerButton.setObjectName("powerButton")
         self.catButton = QtWidgets.QRadioButton(self.centralwidget)
         self.catButton.setGeometry(QtCore.QRect(350, 350, 131, 41))
@@ -66,7 +68,7 @@ class Ui_MainWindow(object):
         self.firstEntrylabel.setFont(font)
         self.firstEntrylabel.setObjectName("firstEntrylabel")
         self.powerEntry = QtWidgets.QLineEdit(self.centralwidget)
-        self.powerEntry.setGeometry(QtCore.QRect(170, 180, 491, 31))
+        self.powerEntry.setGeometry(QtCore.QRect(170, 170, 491, 31))
         self.powerEntry.setObjectName("powerEntry")
         self.powerEntrylabel = QtWidgets.QLabel(self.centralwidget)
         self.powerEntrylabel.setGeometry(QtCore.QRect(40, 170, 111, 31))
@@ -74,12 +76,6 @@ class Ui_MainWindow(object):
         font.setPointSize(10)
         self.powerEntrylabel.setFont(font)
         self.powerEntrylabel.setObjectName("powerEntrylabel")
-        self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(10, 190, 181, 31))
-        font = QtGui.QFont()
-        font.setPointSize(9)
-        self.label_2.setFont(font)
-        self.label_2.setObjectName("label_2")
         self.clearButton = QtWidgets.QPushButton(self.centralwidget)
         self.clearButton.setGeometry(QtCore.QRect(450, 430, 161, 71))
         font = QtGui.QFont()
@@ -100,7 +96,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Recursion Calculator"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.Titletext.setText(_translate("MainWindow", "Recursion"))
         self.powerButton.setText(_translate("MainWindow", "Power"))
         self.catButton.setText(_translate("MainWindow", "Cat Ears"))
@@ -108,7 +104,6 @@ class Ui_MainWindow(object):
         self.calculateButton.setText(_translate("MainWindow", "Calculate"))
         self.firstEntrylabel.setText(_translate("MainWindow", "Number Entry"))
         self.powerEntrylabel.setText(_translate("MainWindow", "Power Entry"))
-        self.label_2.setText(_translate("MainWindow", "(Only for Power Option)"))
         self.clearButton.setText(_translate("MainWindow", "Clear"))
 
 

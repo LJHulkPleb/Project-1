@@ -1,6 +1,9 @@
 from PyQt5.QtWidgets import *
 from RecursionView import *
 
+QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
+QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
+
 
 class Controller(QMainWindow, Ui_MainWindow):
     def __init__(self, *args, **kwargs):
@@ -8,6 +11,7 @@ class Controller(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.calculateButton.clicked.connect(lambda: self.calculate())
         self.clearButton.clicked.connect(lambda: self.clear())
+        self.powerButton.toggled.connect(lambda: self.context())
 
     def power(self, firstNum: int, powNum: int):
         """
@@ -17,7 +21,7 @@ class Controller(QMainWindow, Ui_MainWindow):
         :return: The first number taken to the power of the second given number
         """
 
-        if powNum <=0:
+        if powNum <= 0:
             raise ValueError
         elif powNum == 1:
             return firstNum
@@ -37,7 +41,7 @@ class Controller(QMainWindow, Ui_MainWindow):
         else:
             return 2 + self.cat_ears(firstNum - 1)
 
-    def alien_ears(self, firstNum: int)-> int:
+    def alien_ears(self, firstNum: int) -> int:
         """
         Function to calculate the number of alien ears in a given group of Aliens every odd
         alien has 2 ears and every even alien has 3 ears
@@ -83,5 +87,10 @@ class Controller(QMainWindow, Ui_MainWindow):
         except ValueError:
             self.summaryText.setText("Please enter a valid number in the entry box")
 
-
-
+    def context(self):
+        if self.powerButton.isChecked():
+            self.powerEntrylabel.show()
+            self.powerEntry.show()
+        else:
+            self.powerEntry.hide()
+            self.powerEntrylabel.hide()

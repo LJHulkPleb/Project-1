@@ -85,9 +85,13 @@ class Controller(QMainWindow, Ui_MainWindow):
                 result = self.alien_ears(firstNum)
             self.summaryText.setText(f'The calculated number is {result}')
         except ValueError:
-            self.summaryText.setText("Please enter a valid number in the entry box")
+            self.summaryText.setText("Please enter a positive, non zero, valid \ninteger in the required boxes")
 
     def context(self):
+        """
+        Function that is connected to the power button that will hide the power bar and label unless the power Button is selected
+        :return: Nothing
+        """
         if self.powerButton.isChecked():
             self.powerEntrylabel.show()
             self.powerEntry.show()
